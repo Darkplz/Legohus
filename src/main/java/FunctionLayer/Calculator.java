@@ -34,7 +34,7 @@ public class Calculator {
             }
 
             lB = ((2 * length + 2 * width - 8) / 4) * height;
-            return new Order(origianlH, origianlW, origianlL, sB, mB, lB);
+            return new Order(origianlH, origianlW, origianlL, sB, mB, lB, 0);
 
         }
     }

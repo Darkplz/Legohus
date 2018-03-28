@@ -4,6 +4,7 @@
     Author     : kasper
 --%>
 
+<%@page import="FunctionLayer.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,9 @@
         <title>Customer home page</title>
     </head>
     <body>
-        <h1>Hello <%=request.getParameter("email")%> </h1>
+        <%@include file="../menu.jsp" %>
+        <% User user = (User) request.getSession().getAttribute("user"); %>
+        <h1>Hello <% out.println(user.getEmail()); %> </h1>
         You are now logged in as a customer of our wonderful site.
         <form name="calculator" action="FrontController" method="POST">
             <input type="hidden" name="command" value="calculator">

@@ -14,11 +14,12 @@
         <title>Legohus!</title>
     </head>
     <body>
+        <%@include file="../menu.jsp" %>
         <h1>Dine Brikker!</h1>
-        
+
         <% Order house = (Order) request.getSession().getAttribute("house"); %>
         <% User user = (User) request.getSession().getAttribute("user"); %>
-        
+
         <div class="table-responsive">
             <table class="table table-sriped table-sm">
                 <thead>
@@ -43,12 +44,9 @@
                 </tbody>
             </table>
         </div>
-        <a href="../frontcontroller?command=order" Button="submit">Place Order</a>
-        <form name="login" action="FrontController" method="POST">
-            <input type="hidden" name="command" value="login">
-            <input type="hidden" name="email" value="<%user.getEmail();%>">
-            <input type="hidden" name="password" value="<%user.getPassword();%>">
-            <input type="submit" value="Redo">
+        <form name="order" action="FrontController" method="POST">
+            <input type="hidden" name="command" value="order">
+            <input type="submit" value="Order"/>
         </form>
     </body>
 </html>
