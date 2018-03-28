@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Orders
-    Created on : Mar 23, 2018, 9:44:54 AM
+    Document   : thankyoupage
+    Created on : Mar 28, 2018, 8:52:18 PM
     Author     : steven
 --%>
 
@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Thanks</title>
     </head>
     <body>
         <%@include file="../menu.jsp" %>
-        <h1>Hello World!</h1>
+        <h1>Thank you for buying legos @Steven Legohouse!</h1>
     </body>
 </html>

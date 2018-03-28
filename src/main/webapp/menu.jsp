@@ -28,7 +28,8 @@ li a:hover {
     <ul>
         <li><a href="index.jsp">Home</a></li>
         <li><a href="FrontController?command=profile">Profile</a></li>
-
+        <li><a href="FrontController?command=vieworder">Order</a></li>
+        
         
     </ul>
 

@@ -2,6 +2,8 @@ package FunctionLayer;
 
 import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The purpose of LogicFacade is to...
@@ -22,5 +24,7 @@ public class LogicFacade {
         OrderMapper.createOrder(ord);
         return ord;
     }
-
+    public static ArrayList<Order> getOrders(User user) throws LoginSampleException {
+        return (ArrayList<Order>) OrderMapper.getOrders(user);
+    }
 }

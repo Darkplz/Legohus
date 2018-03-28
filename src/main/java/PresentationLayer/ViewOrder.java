@@ -18,19 +18,18 @@ import javax.servlet.http.HttpSession;
  *
  * @author steven
  */
-public class CreateOrder extends Command {
+public class ViewOrder extends Command {
 
-    public CreateOrder() {
+    public ViewOrder() {
     }
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
-        Order house = (Order) session.getAttribute("house");
         User user = (User) session.getAttribute("user");
-        house.setUser_id(user.getId());
-        LogicFacade.createOrder(house);
-        return "thankyoupage";
+        ArrayList<Order> orderList = LogicFacade.getOrders(user);
+        session.setAttribute("orderList", orderList);
+        return "order";
     }
-
+    
 }

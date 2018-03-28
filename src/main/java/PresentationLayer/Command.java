@@ -16,6 +16,7 @@ abstract class Command {
         commands.put( "calculator", new Calc() );
         commands.put( "profile", new Profile() );
         commands.put( "order", new CreateOrder() );
+        commands.put( "vieworder", new ViewOrder() );
 
     }
 
