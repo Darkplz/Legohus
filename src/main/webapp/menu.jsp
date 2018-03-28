@@ -27,7 +27,7 @@ li a:hover {
 
     <ul>
         <li><a href="index.jsp">Home</a></li>
-        <li><a href="/FrontController?command=calculator">Calculator</a></li>
+        <li><a href="FrontController?command=employeepage">Profile</a></li>
 
         
     </ul>

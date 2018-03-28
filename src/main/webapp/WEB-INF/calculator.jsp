@@ -48,8 +48,7 @@
             <input type="hidden" name="command" value="login">
             <input type="hidden" name="email" value="<%user.getEmail();%>">
             <input type="hidden" name="password" value="<%user.getPassword();%>">
-
-            <input type="submit" value="Submit">
+            <input type="submit" value="Redo">
         </form>
     </body>
 </html>
