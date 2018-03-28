@@ -22,6 +22,9 @@ public class Login extends Command {
         HttpSession session = request.getSession();
         session.setAttribute( "user", user );
         session.setAttribute( "role", user.getRole() );
+        if (user.getRole().equalsIgnoreCase("employee")) {
+            session.setAttribute("orderList", LogicFacade.getAllOrders());
+        }
         return user.getRole() + "page";
     }
 

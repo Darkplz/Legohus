@@ -17,6 +17,7 @@ abstract class Command {
         commands.put( "profile", new Profile() );
         commands.put( "order", new CreateOrder() );
         commands.put( "vieworder", new ViewOrder() );
+        commands.put( "approve", new ApproveOrder() );
 
     }
 

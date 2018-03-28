@@ -27,4 +27,10 @@ public class LogicFacade {
     public static ArrayList<Order> getOrders(User user) throws LoginSampleException {
         return (ArrayList<Order>) OrderMapper.getOrders(user);
     }
+    public static ArrayList<Order> getAllOrders() throws LoginSampleException{
+        return OrderMapper.getAllOrders();
+    }
+    public static void approveOrder(int i) throws LoginSampleException{
+        OrderMapper.approveOrder(i);
+    }
 }

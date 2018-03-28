@@ -52,4 +52,43 @@ public class OrderMapper {
         }
     }
 
+    public static ArrayList<Order> getAllOrders() throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            ArrayList<Order> orderList = new ArrayList<>();
+            String SQL = "SELECT * FROM legohus.orders";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet results = ps.executeQuery();
+
+            while (results.next()) {
+                orderList.add(new Order(
+                        results.getInt("id"),
+                        results.getInt("height"),
+                        results.getInt("width"),
+                        results.getInt("length"),
+                        results.getString("status")));
+            }
+
+            return orderList;
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+
+    }
+
+    public static void approveOrder(int i) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE legohus.orders SET status= ? WHERE id= ?";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setString(1, "approved");
+            ps.setInt(2, i);
+            ps.executeUpdate();
+        }
+
+         catch (SQLException | ClassNotFoundException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+    }
+
 }
