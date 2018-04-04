@@ -32,7 +32,7 @@ public class OrderMapper {
         try {
             Connection con = Connector.connection();
             ArrayList<Order> orderList = new ArrayList<>();
-            String SQL = "SELECT * FROM legohus.orders where user_id = ?";
+            String SQL = "SELECT * FROM Legohus.Orders where user_id = ?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, user.getId());
             ResultSet results = ps.executeQuery();
@@ -56,7 +56,7 @@ public class OrderMapper {
         try {
             Connection con = Connector.connection();
             ArrayList<Order> orderList = new ArrayList<>();
-            String SQL = "SELECT * FROM legohus.orders";
+            String SQL = "SELECT * FROM Legohus.Orders";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet results = ps.executeQuery();
 
@@ -79,7 +79,7 @@ public class OrderMapper {
     public static void approveOrder(int i) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "UPDATE legohus.orders SET status= ? WHERE id= ?";
+            String SQL = "UPDATE Legohus.Orders SET status= ? WHERE id= ?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, "approved");
             ps.setInt(2, i);

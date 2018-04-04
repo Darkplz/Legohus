@@ -48,5 +48,6 @@
             <input type="hidden" name="command" value="approve">
             Approve Order: <input type="text" name="id" placeholder="0">
             <input type="submit" value="Approve">
+            </form>
     </body>
 </html>
